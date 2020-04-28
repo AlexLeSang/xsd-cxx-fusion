@@ -24,7 +24,7 @@ add_custom_command( OUTPUT ${CMAKE_SOURCE_DIR}/xsd/shiporder.h ${CMAKE_SOURCE_DI
   MAIN_DEPENDENCY ${CMAKE_SOURCE_DIR}/shiporder.xsd
   COMMENT "Generating source code from XSD" )
 
-add_custom_target(generate-xsd DEPENDS xsd/shiporder.h xsd/shiporder.cpp
+add_custom_target(generate-xsd DEPENDS ${CMAKE_SOURCE_DIR}/xsd/shiporder.h ${CMAKE_SOURCE_DIR}/xsd/shiporder.cpp
   COMMENT "Checking if re-generation is required" )
 
 add_library(xsd-lib ${CMAKE_SOURCE_DIR}/xsd/shiporder.cpp)
@@ -34,8 +34,8 @@ set_target_properties(xsd-lib PROPERTIES ${TARGET_PROPERTIES})
 target_link_libraries(xsd-lib ${CONAN_LIBS})
 add_dependencies(xsd-lib generate-xsd)
 
-add_executable(xsd-cxx-fusion tests/test_main.cpp)
-target_include_directories(xsd-cxx-fusion PRIVATE include)
+add_executable(xsd-cxx-fusion tests/test_main.cpp tests/test_shiporder.cpp)
+target_include_directories(xsd-cxx-fusion PRIVATE include xsd)
 target_compile_options(xsd-cxx-fusion PRIVATE ${COMPILATION_COMMANDS})
 set_target_properties(xsd-cxx-fusion PROPERTIES ${TARGET_PROPERTIES})
 target_link_libraries(xsd-cxx-fusion ${CONAN_LIBS} xsd-lib)

@@ -2,6 +2,8 @@
 #define CATCH_CONFIG_FAST_COMPILE
 #define CATCH_CONFIG_USE_ASYNC
 
+#include <type-to-string.hpp>
+
 #include <catch2/catch.hpp>
 
 #include <boost/bind.hpp>
@@ -25,7 +27,6 @@ using namespace Catch::Matchers;
 
 struct print_visitor {
   template <class Index, class C> void operator()(Index, C &c) {
-
     std::cout << boost::fusion::extension::struct_member_name<C, Index::value>::call() << "="
               << boost::fusion::at<Index>(c) << std::endl;
   }
@@ -57,24 +58,25 @@ BOOST_FUSION_ADAPT_ADT(demo::employee, (obj.get_name(), obj.set_name(val))(obj.g
 
 TEST_CASE("Test 1") {
 
-  demo::employee e;
+  demo::employee emploee;
 
   constexpr auto age = 41;
 
-  boost::fusion::front(e) = "Edward Norton";
-  boost::fusion::back(e) = age;
+  boost::fusion::front(emploee) = "Edward Norton";
+  boost::fusion::back(emploee) = age;
 
   // Prints 'Edward Norton is 41 years old'
-  std::cout << e.get_name() << " is " << e.get_age() << " years old" << std::endl;
-
-  // print_fields(e);
-  // using struct_member_name = boost::fusion::extension::struct_member_name<demo::employee, 0>;
-  // std::cout << boost::fusion::extension::access::adt_attribute_access<demo::employee,
-  // 0>::boost_fusion_adapt_adt_impl_get(e) << std::endl;
+  std::cout << emploee.get_name() << " is " << emploee.get_age() << " years old" << std::endl;
 
   namespace bfea = boost::fusion::extension;
 
-  REQUIRE(e.get_age() == age);
-  REQUIRE(bfea::access::adt_attribute_access<demo::employee, 1>::boost_fusion_adapt_adt_impl_get(e) == age);
-  REQUIRE(typeid(bfea::access::struct_member<demo::employee, 1>::type).name() == "i");
+  REQUIRE(emploee.get_age() == age);
+  REQUIRE(bfea::access::adt_attribute_access<demo::employee, 1>::boost_fusion_adapt_adt_impl_get(emploee) == age);
+  REQUIRE(typeid(bfea::access::struct_member<demo::employee, 1>::type).name() == std::string{"i"});
+
+  std::cout << "Print" << std::endl;
+
+  const auto eployee_string = TypeToString(emploee);
+
+  std::cout << eployee_string << std::endl;
 }
