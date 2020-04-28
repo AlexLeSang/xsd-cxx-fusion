@@ -1,0 +1,7 @@
+[requires]
+Catch2/2.9.2@catchorg/stable
+boost_fusion/1.66.0@bincrafters/stable
+boost_mpl/1.66.0@bincrafters/stable
+
+[generators]
+cmake
