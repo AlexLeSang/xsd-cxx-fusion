@@ -4,8 +4,8 @@
 <xs:element name="Shiporder">
   <xs:complexType>
     <xs:sequence>
-      <xs:element name="orderperson" type="xs:string"/>
-      <xs:element name="shipto">
+      <xs:element name="Orderperson" type="xs:string"/>
+      <xs:element name="Shipto">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="name" type="xs:string"/>
@@ -15,7 +15,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="item" maxOccurs="unbounded">
+      <xs:element name="Item" maxOccurs="unbounded">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="title" type="xs:string"/>
@@ -26,7 +26,7 @@
         </xs:complexType>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="orderid" type="xs:string" use="required"/>
+    <xs:attribute name="Orderid" type="xs:string" use="required"/>
   </xs:complexType>
 </xs:element>
 

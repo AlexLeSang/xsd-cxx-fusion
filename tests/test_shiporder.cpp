@@ -4,32 +4,58 @@
 #include <catch2/catch.hpp>
 
 #include <shiporder.h>
-#include <type-to-string.hpp>
+#include <type_to_string.hpp>
 
 #include <iostream>
 
-// BOOST_FUSION_ADAPT_ADT(demo::employee, (obj.get_name(), obj.set_name(val))(obj.get_age(), obj.set_age(val)))
-
 // clang-format off
-BOOST_FUSION_ADAPT_ADT(Shiporder,
-                       (obj.orderperson(),
-                        obj.orderperson(val))
+BOOST_FUSION_ADAPT_ADT(Shipto,
+                       (obj.name(), obj.name(val))
+                       (obj.address(), obj.address(val))
+                       (obj.city(), obj.city(val))
                        )
 // clang-format on
 
+std::ostream &operator<<(std::ostream &os, const Shipto &shipto) {
+  os << TypeToString(shipto) << std::endl;
+  return os;
+}
+
 // clang-format off
-// BOOST_FUSION_ADAPT_ADT(shipto,
-//                        (obj.name(), obj.name(val))
-//                        )
+BOOST_FUSION_ADAPT_ADT(Item,
+                       (obj.title(), obj.title(val))
+                       (obj.note(),  obj.note(val))
+                       (obj.quantity(),  obj.quantity(val))
+                       (obj.price(),  obj.price(val))
+                       )
+// clang-format on
+
+std::ostream &operator<<(std::ostream &os, const Item &item) {
+  os << TypeToString(item) << std::endl;
+  return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const xsd::cxx::tree::sequence<Item> &items) {
+  boost::range::for_each(items, [&os](const Item &item) { os << TypeToString(item) << std::endl; });
+  return os;
+}
+
+// clang-format off
+BOOST_FUSION_ADAPT_ADT(Shiporder,
+                       (obj.Orderperson(), obj.Orderperson(val))
+                       (obj.Shipto(),      obj.Shipto(val))
+                       (obj.Item(),        obj.Item(val))
+                       )
 // clang-format on
 
 TEST_CASE("Test 2") {
-  // shipto order_person;
-  // std::cout << TypeToString(order_person) << std::endl;
+  const Shipto shipto{"Name", "Address", "City", "Country"};
 
-  Shiporder shiporder;
-  const auto eployee_string = TypeToString(shiporder);
-  std::cout << eployee_string << std::endl;
+  Shiporder shiporder{"Order Person", shipto, "Order"};
+  shiporder.Item().push_back({"Item 1", 20, 12});
+  shiporder.Item().push_back({"Item 2", 30, 22});
+
+  std::cout << TypeToString(shiporder) << std::endl;
 
   REQUIRE(2 == 2);
 }

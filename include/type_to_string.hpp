@@ -15,9 +15,9 @@
 
 #include <boost/range/algorithm.hpp>
 
-auto TypeToString = [](const auto &object) {
+template<typename Object>
+auto TypeToString(const Object &object) -> std::string {
   namespace bfea = boost::fusion::extension;
-  using Object = typename std::decay<decltype(object)>::type;
 
   using range = boost::mpl::range_c<int, 0, boost::fusion::result_of::size<Object>::type::value>;
 
@@ -30,6 +30,6 @@ auto TypeToString = [](const auto &object) {
   });
 
   return oss.str();
-};
+}
 
 #endif /* PRINT_TYPE_H */

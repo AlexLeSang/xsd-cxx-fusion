@@ -1,0 +1,10 @@
+* DONE Solve crash on ~unique_ptr~
+  CLOSED: [2020-04-29 wo 17:39]
+  Remove ~--generate-default-ctor~ from the XSD options
+
+* DONE Print all fields in XSD classes
+  CLOSED: [2020-04-29 wo 17:36]
+
+* TODO Get the name of the type in the structure from the field
+
+* TODO Get all fields in a structure as a tuple of tuples

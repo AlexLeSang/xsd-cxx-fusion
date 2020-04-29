@@ -253,8 +253,8 @@ namespace xml_schema
 // Forward declarations.
 //
 class Shiporder;
-class shipto;
-class item;
+class Shipto;
+class Item;
 
 #include <memory>    // ::std::unique_ptr
 #include <limits>    // std::numeric_limits
@@ -273,85 +273,83 @@ class item;
 class Shiporder: public ::xml_schema::type
 {
   public:
-  // orderperson
+  // Orderperson
   //
-  typedef ::xml_schema::string orderperson_type;
-  typedef ::xsd::cxx::tree::traits< orderperson_type, char > orderperson_traits;
+  typedef ::xml_schema::string Orderperson_type;
+  typedef ::xsd::cxx::tree::traits< Orderperson_type, char > Orderperson_traits;
 
-  const orderperson_type&
-  orderperson () const;
+  const Orderperson_type&
+  Orderperson () const;
 
-  orderperson_type&
-  orderperson ();
-
-  void
-  orderperson (const orderperson_type& x);
+  Orderperson_type&
+  Orderperson ();
 
   void
-  orderperson (::std::unique_ptr< orderperson_type > p);
+  Orderperson (const Orderperson_type& x);
 
-  // shipto
+  void
+  Orderperson (::std::unique_ptr< Orderperson_type > p);
+
+  // Shipto
   //
-  typedef ::shipto shipto_type;
-  typedef ::xsd::cxx::tree::traits< shipto_type, char > shipto_traits;
+  typedef ::Shipto Shipto_type;
+  typedef ::xsd::cxx::tree::traits< Shipto_type, char > Shipto_traits;
 
-  const shipto_type&
-  shipto () const;
+  const Shipto_type&
+  Shipto () const;
 
-  shipto_type&
-  shipto ();
-
-  void
-  shipto (const shipto_type& x);
+  Shipto_type&
+  Shipto ();
 
   void
-  shipto (::std::unique_ptr< shipto_type > p);
+  Shipto (const Shipto_type& x);
 
-  // item
+  void
+  Shipto (::std::unique_ptr< Shipto_type > p);
+
+  // Item
   //
-  typedef ::item item_type;
-  typedef ::xsd::cxx::tree::sequence< item_type > item_sequence;
-  typedef item_sequence::iterator item_iterator;
-  typedef item_sequence::const_iterator item_const_iterator;
-  typedef ::xsd::cxx::tree::traits< item_type, char > item_traits;
+  typedef ::Item Item_type;
+  typedef ::xsd::cxx::tree::sequence< Item_type > Item_sequence;
+  typedef Item_sequence::iterator Item_iterator;
+  typedef Item_sequence::const_iterator Item_const_iterator;
+  typedef ::xsd::cxx::tree::traits< Item_type, char > Item_traits;
 
-  const item_sequence&
-  item () const;
+  const Item_sequence&
+  Item () const;
 
-  item_sequence&
-  item ();
+  Item_sequence&
+  Item ();
 
   void
-  item (const item_sequence& s);
+  Item (const Item_sequence& s);
 
-  // orderid
+  // Orderid
   //
-  typedef ::xml_schema::string orderid_type;
-  typedef ::xsd::cxx::tree::traits< orderid_type, char > orderid_traits;
+  typedef ::xml_schema::string Orderid_type;
+  typedef ::xsd::cxx::tree::traits< Orderid_type, char > Orderid_traits;
 
-  const orderid_type&
-  orderid () const;
+  const Orderid_type&
+  Orderid () const;
 
-  orderid_type&
-  orderid ();
-
-  void
-  orderid (const orderid_type& x);
+  Orderid_type&
+  Orderid ();
 
   void
-  orderid (::std::unique_ptr< orderid_type > p);
+  Orderid (const Orderid_type& x);
+
+  void
+  Orderid (::std::unique_ptr< Orderid_type > p);
 
   // Constructors.
   //
-  Shiporder ();
+  Shiporder (const Orderperson_type&,
+             const Shipto_type&,
+             const Orderid_type&);
 
-  Shiporder (const orderperson_type&,
-             const shipto_type&,
-             const orderid_type&);
-
-  Shiporder (const orderperson_type&,
-             ::std::unique_ptr< shipto_type >,
-             const orderid_type&);
+  Shiporder (const Orderperson_type&,
+             ::std::unique_ptr< Shipto_type >,
+             const Orderid_type&);
 
   Shiporder (const ::xercesc::DOMElement& e,
              ::xml_schema::flags f = 0,
@@ -379,13 +377,13 @@ class Shiporder: public ::xml_schema::type
          ::xml_schema::flags);
 
   protected:
-  ::xsd::cxx::tree::one< orderperson_type > orderperson_;
-  ::xsd::cxx::tree::one< shipto_type > shipto_;
-  item_sequence item_;
-  ::xsd::cxx::tree::one< orderid_type > orderid_;
+  ::xsd::cxx::tree::one< Orderperson_type > Orderperson_;
+  ::xsd::cxx::tree::one< Shipto_type > Shipto_;
+  Item_sequence Item_;
+  ::xsd::cxx::tree::one< Orderid_type > Orderid_;
 };
 
-class shipto: public ::xml_schema::type
+class Shipto: public ::xml_schema::type
 {
   public:
   // name
@@ -458,30 +456,28 @@ class shipto: public ::xml_schema::type
 
   // Constructors.
   //
-  shipto ();
-
-  shipto (const name_type&,
+  Shipto (const name_type&,
           const address_type&,
           const city_type&,
           const country_type&);
 
-  shipto (const ::xercesc::DOMElement& e,
+  Shipto (const ::xercesc::DOMElement& e,
           ::xml_schema::flags f = 0,
           ::xml_schema::container* c = 0);
 
-  shipto (const shipto& x,
+  Shipto (const Shipto& x,
           ::xml_schema::flags f = 0,
           ::xml_schema::container* c = 0);
 
-  virtual shipto*
+  virtual Shipto*
   _clone (::xml_schema::flags f = 0,
           ::xml_schema::container* c = 0) const;
 
-  shipto&
-  operator= (const shipto& x);
+  Shipto&
+  operator= (const Shipto& x);
 
   virtual 
-  ~shipto ();
+  ~Shipto ();
 
   // Implementation.
   //
@@ -497,7 +493,7 @@ class shipto: public ::xml_schema::type
   ::xsd::cxx::tree::one< country_type > country_;
 };
 
-class item: public ::xml_schema::type
+class Item: public ::xml_schema::type
 {
   public:
   // title
@@ -568,29 +564,27 @@ class item: public ::xml_schema::type
 
   // Constructors.
   //
-  item ();
-
-  item (const title_type&,
+  Item (const title_type&,
         const quantity_type&,
         const price_type&);
 
-  item (const ::xercesc::DOMElement& e,
+  Item (const ::xercesc::DOMElement& e,
         ::xml_schema::flags f = 0,
         ::xml_schema::container* c = 0);
 
-  item (const item& x,
+  Item (const Item& x,
         ::xml_schema::flags f = 0,
         ::xml_schema::container* c = 0);
 
-  virtual item*
+  virtual Item*
   _clone (::xml_schema::flags f = 0,
           ::xml_schema::container* c = 0) const;
 
-  item&
-  operator= (const item& x);
+  Item&
+  operator= (const Item& x);
 
   virtual 
-  ~item ();
+  ~Item ();
 
   // Implementation.
   //
@@ -785,10 +779,10 @@ void
 operator<< (::xercesc::DOMElement&, const Shiporder&);
 
 void
-operator<< (::xercesc::DOMElement&, const shipto&);
+operator<< (::xercesc::DOMElement&, const Shipto&);
 
 void
-operator<< (::xercesc::DOMElement&, const item&);
+operator<< (::xercesc::DOMElement&, const Item&);
 
 #include <xsd/cxx/post.hxx>
 

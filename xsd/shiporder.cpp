@@ -43,285 +43,285 @@
 // Shiporder
 // 
 
-const Shiporder::orderperson_type& Shiporder::
-orderperson () const
+const Shiporder::Orderperson_type& Shiporder::
+Orderperson () const
 {
-  return this->orderperson_.get ();
+  return this->Orderperson_.get ();
 }
 
-Shiporder::orderperson_type& Shiporder::
-orderperson ()
+Shiporder::Orderperson_type& Shiporder::
+Orderperson ()
 {
-  return this->orderperson_.get ();
-}
-
-void Shiporder::
-orderperson (const orderperson_type& x)
-{
-  this->orderperson_.set (x);
+  return this->Orderperson_.get ();
 }
 
 void Shiporder::
-orderperson (::std::unique_ptr< orderperson_type > x)
+Orderperson (const Orderperson_type& x)
 {
-  this->orderperson_.set (std::move (x));
-}
-
-const Shiporder::shipto_type& Shiporder::
-shipto () const
-{
-  return this->shipto_.get ();
-}
-
-Shiporder::shipto_type& Shiporder::
-shipto ()
-{
-  return this->shipto_.get ();
+  this->Orderperson_.set (x);
 }
 
 void Shiporder::
-shipto (const shipto_type& x)
+Orderperson (::std::unique_ptr< Orderperson_type > x)
 {
-  this->shipto_.set (x);
+  this->Orderperson_.set (std::move (x));
+}
+
+const Shiporder::Shipto_type& Shiporder::
+Shipto () const
+{
+  return this->Shipto_.get ();
+}
+
+Shiporder::Shipto_type& Shiporder::
+Shipto ()
+{
+  return this->Shipto_.get ();
 }
 
 void Shiporder::
-shipto (::std::unique_ptr< shipto_type > x)
+Shipto (const Shipto_type& x)
 {
-  this->shipto_.set (std::move (x));
-}
-
-const Shiporder::item_sequence& Shiporder::
-item () const
-{
-  return this->item_;
-}
-
-Shiporder::item_sequence& Shiporder::
-item ()
-{
-  return this->item_;
+  this->Shipto_.set (x);
 }
 
 void Shiporder::
-item (const item_sequence& s)
+Shipto (::std::unique_ptr< Shipto_type > x)
 {
-  this->item_ = s;
+  this->Shipto_.set (std::move (x));
 }
 
-const Shiporder::orderid_type& Shiporder::
-orderid () const
+const Shiporder::Item_sequence& Shiporder::
+Item () const
 {
-  return this->orderid_.get ();
+  return this->Item_;
 }
 
-Shiporder::orderid_type& Shiporder::
-orderid ()
+Shiporder::Item_sequence& Shiporder::
+Item ()
 {
-  return this->orderid_.get ();
-}
-
-void Shiporder::
-orderid (const orderid_type& x)
-{
-  this->orderid_.set (x);
+  return this->Item_;
 }
 
 void Shiporder::
-orderid (::std::unique_ptr< orderid_type > x)
+Item (const Item_sequence& s)
 {
-  this->orderid_.set (std::move (x));
+  this->Item_ = s;
+}
+
+const Shiporder::Orderid_type& Shiporder::
+Orderid () const
+{
+  return this->Orderid_.get ();
+}
+
+Shiporder::Orderid_type& Shiporder::
+Orderid ()
+{
+  return this->Orderid_.get ();
+}
+
+void Shiporder::
+Orderid (const Orderid_type& x)
+{
+  this->Orderid_.set (x);
+}
+
+void Shiporder::
+Orderid (::std::unique_ptr< Orderid_type > x)
+{
+  this->Orderid_.set (std::move (x));
 }
 
 
-// shipto
+// Shipto
 // 
 
-const shipto::name_type& shipto::
+const Shipto::name_type& Shipto::
 name () const
 {
   return this->name_.get ();
 }
 
-shipto::name_type& shipto::
+Shipto::name_type& Shipto::
 name ()
 {
   return this->name_.get ();
 }
 
-void shipto::
+void Shipto::
 name (const name_type& x)
 {
   this->name_.set (x);
 }
 
-void shipto::
+void Shipto::
 name (::std::unique_ptr< name_type > x)
 {
   this->name_.set (std::move (x));
 }
 
-const shipto::address_type& shipto::
+const Shipto::address_type& Shipto::
 address () const
 {
   return this->address_.get ();
 }
 
-shipto::address_type& shipto::
+Shipto::address_type& Shipto::
 address ()
 {
   return this->address_.get ();
 }
 
-void shipto::
+void Shipto::
 address (const address_type& x)
 {
   this->address_.set (x);
 }
 
-void shipto::
+void Shipto::
 address (::std::unique_ptr< address_type > x)
 {
   this->address_.set (std::move (x));
 }
 
-const shipto::city_type& shipto::
+const Shipto::city_type& Shipto::
 city () const
 {
   return this->city_.get ();
 }
 
-shipto::city_type& shipto::
+Shipto::city_type& Shipto::
 city ()
 {
   return this->city_.get ();
 }
 
-void shipto::
+void Shipto::
 city (const city_type& x)
 {
   this->city_.set (x);
 }
 
-void shipto::
+void Shipto::
 city (::std::unique_ptr< city_type > x)
 {
   this->city_.set (std::move (x));
 }
 
-const shipto::country_type& shipto::
+const Shipto::country_type& Shipto::
 country () const
 {
   return this->country_.get ();
 }
 
-shipto::country_type& shipto::
+Shipto::country_type& Shipto::
 country ()
 {
   return this->country_.get ();
 }
 
-void shipto::
+void Shipto::
 country (const country_type& x)
 {
   this->country_.set (x);
 }
 
-void shipto::
+void Shipto::
 country (::std::unique_ptr< country_type > x)
 {
   this->country_.set (std::move (x));
 }
 
 
-// item
+// Item
 // 
 
-const item::title_type& item::
+const Item::title_type& Item::
 title () const
 {
   return this->title_.get ();
 }
 
-item::title_type& item::
+Item::title_type& Item::
 title ()
 {
   return this->title_.get ();
 }
 
-void item::
+void Item::
 title (const title_type& x)
 {
   this->title_.set (x);
 }
 
-void item::
+void Item::
 title (::std::unique_ptr< title_type > x)
 {
   this->title_.set (std::move (x));
 }
 
-const item::note_optional& item::
+const Item::note_optional& Item::
 note () const
 {
   return this->note_;
 }
 
-item::note_optional& item::
+Item::note_optional& Item::
 note ()
 {
   return this->note_;
 }
 
-void item::
+void Item::
 note (const note_type& x)
 {
   this->note_.set (x);
 }
 
-void item::
+void Item::
 note (const note_optional& x)
 {
   this->note_ = x;
 }
 
-void item::
+void Item::
 note (::std::unique_ptr< note_type > x)
 {
   this->note_.set (std::move (x));
 }
 
-const item::quantity_type& item::
+const Item::quantity_type& Item::
 quantity () const
 {
   return this->quantity_.get ();
 }
 
-item::quantity_type& item::
+Item::quantity_type& Item::
 quantity ()
 {
   return this->quantity_.get ();
 }
 
-void item::
+void Item::
 quantity (const quantity_type& x)
 {
   this->quantity_.set (x);
 }
 
-const item::price_type& item::
+const Item::price_type& Item::
 price () const
 {
   return this->price_.get ();
 }
 
-item::price_type& item::
+Item::price_type& Item::
 price ()
 {
   return this->price_.get ();
 }
 
-void item::
+void Item::
 price (const price_type& x)
 {
   this->price_.set (x);
@@ -334,36 +334,26 @@ price (const price_type& x)
 //
 
 Shiporder::
-Shiporder ()
+Shiporder (const Orderperson_type& Orderperson,
+           const Shipto_type& Shipto,
+           const Orderid_type& Orderid)
 : ::xml_schema::type (),
-  orderperson_ (this),
-  shipto_ (this),
-  item_ (this),
-  orderid_ (this)
+  Orderperson_ (Orderperson, this),
+  Shipto_ (Shipto, this),
+  Item_ (this),
+  Orderid_ (Orderid, this)
 {
 }
 
 Shiporder::
-Shiporder (const orderperson_type& orderperson,
-           const shipto_type& shipto,
-           const orderid_type& orderid)
+Shiporder (const Orderperson_type& Orderperson,
+           ::std::unique_ptr< Shipto_type > Shipto,
+           const Orderid_type& Orderid)
 : ::xml_schema::type (),
-  orderperson_ (orderperson, this),
-  shipto_ (shipto, this),
-  item_ (this),
-  orderid_ (orderid, this)
-{
-}
-
-Shiporder::
-Shiporder (const orderperson_type& orderperson,
-           ::std::unique_ptr< shipto_type > shipto,
-           const orderid_type& orderid)
-: ::xml_schema::type (),
-  orderperson_ (orderperson, this),
-  shipto_ (std::move (shipto), this),
-  item_ (this),
-  orderid_ (orderid, this)
+  Orderperson_ (Orderperson, this),
+  Shipto_ (std::move (Shipto), this),
+  Item_ (this),
+  Orderid_ (Orderid, this)
 {
 }
 
@@ -372,10 +362,10 @@ Shiporder (const Shiporder& x,
            ::xml_schema::flags f,
            ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
-  orderperson_ (x.orderperson_, f, this),
-  shipto_ (x.shipto_, f, this),
-  item_ (x.item_, f, this),
-  orderid_ (x.orderid_, f, this)
+  Orderperson_ (x.Orderperson_, f, this),
+  Shipto_ (x.Shipto_, f, this),
+  Item_ (x.Item_, f, this),
+  Orderid_ (x.Orderid_, f, this)
 {
 }
 
@@ -384,10 +374,10 @@ Shiporder (const ::xercesc::DOMElement& e,
            ::xml_schema::flags f,
            ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-  orderperson_ (this),
-  shipto_ (this),
-  item_ (this),
-  orderid_ (this)
+  Orderperson_ (this),
+  Shipto_ (this),
+  Item_ (this),
+  Orderid_ (this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
   {
@@ -406,59 +396,59 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     const ::xsd::cxx::xml::qualified_name< char > n (
       ::xsd::cxx::xml::dom::name< char > (i));
 
-    // orderperson
+    // Orderperson
     //
-    if (n.name () == "orderperson" && n.namespace_ ().empty ())
+    if (n.name () == "Orderperson" && n.namespace_ ().empty ())
     {
-      ::std::unique_ptr< orderperson_type > r (
-        orderperson_traits::create (i, f, this));
+      ::std::unique_ptr< Orderperson_type > r (
+        Orderperson_traits::create (i, f, this));
 
-      if (!orderperson_.present ())
+      if (!Orderperson_.present ())
       {
-        this->orderperson_.set (::std::move (r));
+        this->Orderperson_.set (::std::move (r));
         continue;
       }
     }
 
-    // shipto
+    // Shipto
     //
-    if (n.name () == "shipto" && n.namespace_ ().empty ())
+    if (n.name () == "Shipto" && n.namespace_ ().empty ())
     {
-      ::std::unique_ptr< shipto_type > r (
-        shipto_traits::create (i, f, this));
+      ::std::unique_ptr< Shipto_type > r (
+        Shipto_traits::create (i, f, this));
 
-      if (!shipto_.present ())
+      if (!Shipto_.present ())
       {
-        this->shipto_.set (::std::move (r));
+        this->Shipto_.set (::std::move (r));
         continue;
       }
     }
 
-    // item
+    // Item
     //
-    if (n.name () == "item" && n.namespace_ ().empty ())
+    if (n.name () == "Item" && n.namespace_ ().empty ())
     {
-      ::std::unique_ptr< item_type > r (
-        item_traits::create (i, f, this));
+      ::std::unique_ptr< Item_type > r (
+        Item_traits::create (i, f, this));
 
-      this->item_.push_back (::std::move (r));
+      this->Item_.push_back (::std::move (r));
       continue;
     }
 
     break;
   }
 
-  if (!orderperson_.present ())
+  if (!Orderperson_.present ())
   {
     throw ::xsd::cxx::tree::expected_element< char > (
-      "orderperson",
+      "Orderperson",
       "");
   }
 
-  if (!shipto_.present ())
+  if (!Shipto_.present ())
   {
     throw ::xsd::cxx::tree::expected_element< char > (
-      "shipto",
+      "Shipto",
       "");
   }
 
@@ -468,17 +458,17 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     const ::xsd::cxx::xml::qualified_name< char > n (
       ::xsd::cxx::xml::dom::name< char > (i));
 
-    if (n.name () == "orderid" && n.namespace_ ().empty ())
+    if (n.name () == "Orderid" && n.namespace_ ().empty ())
     {
-      this->orderid_.set (orderid_traits::create (i, f, this));
+      this->Orderid_.set (Orderid_traits::create (i, f, this));
       continue;
     }
   }
 
-  if (!orderid_.present ())
+  if (!Orderid_.present ())
   {
     throw ::xsd::cxx::tree::expected_attribute< char > (
-      "orderid",
+      "Orderid",
       "");
   }
 }
@@ -496,10 +486,10 @@ operator= (const Shiporder& x)
   if (this != &x)
   {
     static_cast< ::xml_schema::type& > (*this) = x;
-    this->orderperson_ = x.orderperson_;
-    this->shipto_ = x.shipto_;
-    this->item_ = x.item_;
-    this->orderid_ = x.orderid_;
+    this->Orderperson_ = x.Orderperson_;
+    this->Shipto_ = x.Shipto_;
+    this->Item_ = x.Item_;
+    this->Orderid_ = x.Orderid_;
   }
 
   return *this;
@@ -510,21 +500,11 @@ Shiporder::
 {
 }
 
-// shipto
+// Shipto
 //
 
-shipto::
-shipto ()
-: ::xml_schema::type (),
-  name_ (this),
-  address_ (this),
-  city_ (this),
-  country_ (this)
-{
-}
-
-shipto::
-shipto (const name_type& name,
+Shipto::
+Shipto (const name_type& name,
         const address_type& address,
         const city_type& city,
         const country_type& country)
@@ -536,8 +516,8 @@ shipto (const name_type& name,
 {
 }
 
-shipto::
-shipto (const shipto& x,
+Shipto::
+Shipto (const Shipto& x,
         ::xml_schema::flags f,
         ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
@@ -548,8 +528,8 @@ shipto (const shipto& x,
 {
 }
 
-shipto::
-shipto (const ::xercesc::DOMElement& e,
+Shipto::
+Shipto (const ::xercesc::DOMElement& e,
         ::xml_schema::flags f,
         ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
@@ -565,7 +545,7 @@ shipto (const ::xercesc::DOMElement& e,
   }
 }
 
-void shipto::
+void Shipto::
 parse (::xsd::cxx::xml::dom::parser< char >& p,
        ::xml_schema::flags f)
 {
@@ -663,15 +643,15 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
   }
 }
 
-shipto* shipto::
+Shipto* Shipto::
 _clone (::xml_schema::flags f,
         ::xml_schema::container* c) const
 {
-  return new class shipto (*this, f, c);
+  return new class Shipto (*this, f, c);
 }
 
-shipto& shipto::
-operator= (const shipto& x)
+Shipto& Shipto::
+operator= (const Shipto& x)
 {
   if (this != &x)
   {
@@ -685,26 +665,16 @@ operator= (const shipto& x)
   return *this;
 }
 
-shipto::
-~shipto ()
+Shipto::
+~Shipto ()
 {
 }
 
-// item
+// Item
 //
 
-item::
-item ()
-: ::xml_schema::type (),
-  title_ (this),
-  note_ (this),
-  quantity_ (this),
-  price_ (this)
-{
-}
-
-item::
-item (const title_type& title,
+Item::
+Item (const title_type& title,
       const quantity_type& quantity,
       const price_type& price)
 : ::xml_schema::type (),
@@ -715,8 +685,8 @@ item (const title_type& title,
 {
 }
 
-item::
-item (const item& x,
+Item::
+Item (const Item& x,
       ::xml_schema::flags f,
       ::xml_schema::container* c)
 : ::xml_schema::type (x, f, c),
@@ -727,8 +697,8 @@ item (const item& x,
 {
 }
 
-item::
-item (const ::xercesc::DOMElement& e,
+Item::
+Item (const ::xercesc::DOMElement& e,
       ::xml_schema::flags f,
       ::xml_schema::container* c)
 : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
@@ -744,7 +714,7 @@ item (const ::xercesc::DOMElement& e,
   }
 }
 
-void item::
+void Item::
 parse (::xsd::cxx::xml::dom::parser< char >& p,
        ::xml_schema::flags f)
 {
@@ -829,15 +799,15 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
   }
 }
 
-item* item::
+Item* Item::
 _clone (::xml_schema::flags f,
         ::xml_schema::container* c) const
 {
-  return new class item (*this, f, c);
+  return new class Item (*this, f, c);
 }
 
-item& item::
-operator= (const item& x)
+Item& Item::
+operator= (const Item& x)
 {
   if (this != &x)
   {
@@ -851,8 +821,8 @@ operator= (const item& x)
   return *this;
 }
 
-item::
-~item ()
+Item::
+~Item ()
 {
 }
 
@@ -1283,56 +1253,56 @@ operator<< (::xercesc::DOMElement& e, const Shiporder& i)
 {
   e << static_cast< const ::xml_schema::type& > (i);
 
-  // orderperson
+  // Orderperson
   //
   {
     ::xercesc::DOMElement& s (
       ::xsd::cxx::xml::dom::create_element (
-        "orderperson",
+        "Orderperson",
         e));
 
-    s << i.orderperson ();
+    s << i.Orderperson ();
   }
 
-  // shipto
+  // Shipto
   //
   {
     ::xercesc::DOMElement& s (
       ::xsd::cxx::xml::dom::create_element (
-        "shipto",
+        "Shipto",
         e));
 
-    s << i.shipto ();
+    s << i.Shipto ();
   }
 
-  // item
+  // Item
   //
-  for (Shiporder::item_const_iterator
-       b (i.item ().begin ()), n (i.item ().end ());
+  for (Shiporder::Item_const_iterator
+       b (i.Item ().begin ()), n (i.Item ().end ());
        b != n; ++b)
   {
     ::xercesc::DOMElement& s (
       ::xsd::cxx::xml::dom::create_element (
-        "item",
+        "Item",
         e));
 
     s << *b;
   }
 
-  // orderid
+  // Orderid
   //
   {
     ::xercesc::DOMAttr& a (
       ::xsd::cxx::xml::dom::create_attribute (
-        "orderid",
+        "Orderid",
         e));
 
-    a << i.orderid ();
+    a << i.Orderid ();
   }
 }
 
 void
-operator<< (::xercesc::DOMElement& e, const shipto& i)
+operator<< (::xercesc::DOMElement& e, const Shipto& i)
 {
   e << static_cast< const ::xml_schema::type& > (i);
 
@@ -1382,7 +1352,7 @@ operator<< (::xercesc::DOMElement& e, const shipto& i)
 }
 
 void
-operator<< (::xercesc::DOMElement& e, const item& i)
+operator<< (::xercesc::DOMElement& e, const Item& i)
 {
   e << static_cast< const ::xml_schema::type& > (i);
 

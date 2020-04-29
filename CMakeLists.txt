@@ -5,7 +5,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(TARGET_PROPERTIES CXX_STANDARD 20 CXX_STANDARD_REQUIRED ON CXX_EXTENSIONS OFF)
+set(TARGET_PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON CXX_EXTENSIONS OFF)
 
 include(build/conanbuildinfo.cmake)
 conan_basic_setup()
@@ -20,7 +20,7 @@ set(COMPILATION_COMMANDS -Wunused -Wall -Wextra -Wfloat-conversion -Wpedantic -m
 
 
 add_custom_command( OUTPUT ${CMAKE_SOURCE_DIR}/xsd/shiporder.h ${CMAKE_SOURCE_DIR}/xsd/shiporder.cpp
-  COMMAND xsdcxx cxx-tree --generate-serialization --generate-default-ctor --generate-from-base-ctor --hxx-suffix .h --cxx-suffix .cpp --std c++11 --output-dir ${CMAKE_SOURCE_DIR}/xsd ${CMAKE_SOURCE_DIR}/shiporder.xsd
+  COMMAND xsdcxx cxx-tree --generate-serialization --generate-from-base-ctor --hxx-suffix .h --cxx-suffix .cpp --std c++11 --output-dir ${CMAKE_SOURCE_DIR}/xsd ${CMAKE_SOURCE_DIR}/shiporder.xsd
   MAIN_DEPENDENCY ${CMAKE_SOURCE_DIR}/shiporder.xsd
   COMMENT "Generating source code from XSD" )
 

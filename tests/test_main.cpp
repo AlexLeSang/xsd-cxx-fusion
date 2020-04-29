@@ -2,7 +2,7 @@
 #define CATCH_CONFIG_FAST_COMPILE
 #define CATCH_CONFIG_USE_ASYNC
 
-#include <type-to-string.hpp>
+#include <type_to_string.hpp>
 
 #include <catch2/catch.hpp>
 
